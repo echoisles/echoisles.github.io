@@ -142,6 +142,162 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git-操作命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/19/git-操作命令/">git 操作命令</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/19/git-操作命令/" class="archive-article-date">
+  	<time datetime="2018-04-19T15:46:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="初始化配置"><a href="#初始化配置" class="headerlink" title="初始化配置"></a>初始化配置</h2><h4 id="配置使用git仓库的人员姓名"><a href="#配置使用git仓库的人员姓名" class="headerlink" title="配置使用git仓库的人员姓名"></a>配置使用git仓库的人员姓名</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"Your Name Comes Here"</span></span><br></pre></td></tr></table></figure>
+<h4 id="配置使用git仓库的人员email"><a href="#配置使用git仓库的人员email" class="headerlink" title="配置使用git仓库的人员email"></a>配置使用git仓库的人员email</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email you@yourdomain.example.com</span><br></pre></td></tr></table></figure>
+<h4 id="配置到缓存-默认15分钟"><a href="#配置到缓存-默认15分钟" class="headerlink" title="配置到缓存 默认15分钟"></a>配置到缓存 默认15分钟</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper cache</span><br></pre></td></tr></table></figure>
+<h4 id="修改缓存时间"><a href="#修改缓存时间" class="headerlink" title="修改缓存时间"></a>修改缓存时间</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper <span class="string">'cache --timeout=3600'</span></span><br></pre></td></tr></table></figure>
+<h4 id="列举所有配置"><a href="#列举所有配置" class="headerlink" title="列举所有配置"></a>列举所有配置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+<h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">help</span>                <span class="comment"># 显示帮助</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;          <span class="comment"># 将工作文件修改提交到本地暂存区</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .               <span class="comment"># 将所有修改过的工作文件提交暂存区</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm &lt;file&gt;           <span class="comment"># 从版本库中删除文件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm &lt;file&gt; --cached  <span class="comment"># 从版本库中删除文件，但不删除文件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset &lt;file&gt;        <span class="comment"># 从暂存区恢复到工作文件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset -- .          <span class="comment"># 从暂存区恢复到工作文件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard        <span class="comment"># 恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert &lt;<span class="variable">$id</span>&gt;        <span class="comment"># 恢复某次提交的状态，恢复动作本身也创建了一次提交对象</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert HEAD         <span class="comment"># 恢复最后一次提交的状态</span></span><br></pre></td></tr></table></figure>
+<h2 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;file&gt;                 <span class="comment"># 比较当前文件和暂存区文件差异</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff                        <span class="comment"># 默认比较也是同上</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;<span class="variable">$id1</span>&gt; &lt;<span class="variable">$id2</span>&gt;          <span class="comment"># 比较两次提交之间的差异</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;branch1&gt;..&lt;branch2&gt;   <span class="comment"># 在两个分支之间比较</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff --staged               <span class="comment"># 比较暂存区和版本库差异</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff --cached               <span class="comment"># 比较暂存区和版本库差异</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff --<span class="built_in">stat</span>                 <span class="comment"># 仅仅比较统计信息</span></span><br></pre></td></tr></table></figure>
+<h2 id="查看提交记录"><a href="#查看提交记录" class="headerlink" title="查看提交记录"></a>查看提交记录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> &lt;file&gt;      <span class="comment"># 查看该文件每次提交记录</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> -p &lt;file&gt;   <span class="comment"># 查看每次详细修改内容的diff</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> -p -2       <span class="comment"># 查看最近两次详细修改内容的diff</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span>      <span class="comment"># 查看提交统计信息</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tig                 <span class="comment"># Mac上可以使用tig代替diff和log，brew install tig</span></span><br></pre></td></tr></table></figure>
+<h2 id="仓库管理"><a href="#仓库管理" class="headerlink" title="仓库管理"></a>仓库管理</h2><h4 id="初始化一个版本仓库"><a href="#初始化一个版本仓库" class="headerlink" title="初始化一个版本仓库"></a>初始化一个版本仓库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<h4 id="Clone远程版本库"><a href="#Clone远程版本库" class="headerlink" title="Clone远程版本库"></a>Clone远程版本库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@xbc.me:wordpress.git</span><br></pre></td></tr></table></figure>
+<h4 id="添加远程版本库origin，语法为-git-remote-add-shortname-url"><a href="#添加远程版本库origin，语法为-git-remote-add-shortname-url" class="headerlink" title="添加远程版本库origin，语法为 git remote add [shortname] [url]"></a>添加远程版本库origin，语法为 git remote add [shortname] [url]</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@xbc.me:wordpress.git</span><br></pre></td></tr></table></figure>
+<h4 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<h4 id="修改远程仓库地址"><a href="#修改远程仓库地址" class="headerlink" title="修改远程仓库地址"></a>修改远程仓库地址</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="built_in">set</span>-url origin git@ github.com:robbin/robbin_site.git</span><br></pre></td></tr></table></figure>
+<h4 id="删除远程仓库"><a href="#删除远程仓库" class="headerlink" title="删除远程仓库"></a>删除远程仓库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm &lt;repository&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="工作流管理"><a href="#工作流管理" class="headerlink" title="工作流管理"></a>工作流管理</h2><h4 id="添加当前修改的文件到暂存区"><a href="#添加当前修改的文件到暂存区" class="headerlink" title="添加当前修改的文件到暂存区"></a>添加当前修改的文件到暂存区</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+<h4 id="如果你自动追踪文件，包括你已经手动删除的，状态为Deleted的文件"><a href="#如果你自动追踪文件，包括你已经手动删除的，状态为Deleted的文件" class="headerlink" title="如果你自动追踪文件，包括你已经手动删除的，状态为Deleted的文件"></a>如果你自动追踪文件，包括你已经手动删除的，状态为Deleted的文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add -u</span><br></pre></td></tr></table></figure>
+<h4 id="提交你的修改"><a href="#提交你的修改" class="headerlink" title="提交你的修改"></a>提交你的修改</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit –m <span class="string">"你的注释"</span></span><br></pre></td></tr></table></figure>
+<h4 id="推送你的更新到远程服务器-语法为-git-push-远程名-本地分支-远程分支"><a href="#推送你的更新到远程服务器-语法为-git-push-远程名-本地分支-远程分支" class="headerlink" title="推送你的更新到远程服务器,语法为 git push [远程名] [本地分支]:[远程分支]"></a>推送你的更新到远程服务器,语法为 git push [远程名] [本地分支]:[远程分支]</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h4 id="查看文件状态"><a href="#查看文件状态" class="headerlink" title="查看文件状态"></a>查看文件状态</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+<h4 id="跟踪新文件"><a href="#跟踪新文件" class="headerlink" title="跟踪新文件"></a>跟踪新文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add readme.txt</span><br></pre></td></tr></table></figure>
+<h4 id="从当前跟踪列表移除文件，并完全删除"><a href="#从当前跟踪列表移除文件，并完全删除" class="headerlink" title="从当前跟踪列表移除文件，并完全删除"></a>从当前跟踪列表移除文件，并完全删除</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm readme.txt</span><br></pre></td></tr></table></figure>
+<h4 id="仅在暂存区删除，保留文件在当前目录，不再跟踪"><a href="#仅在暂存区删除，保留文件在当前目录，不再跟踪" class="headerlink" title="仅在暂存区删除，保留文件在当前目录，不再跟踪"></a>仅在暂存区删除，保留文件在当前目录，不再跟踪</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm –cached readme.txt</span><br></pre></td></tr></table></figure>
+<h4 id="重命名文件"><a href="#重命名文件" class="headerlink" title="重命名文件"></a>重命名文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git mv reademe.txt readme</span><br></pre></td></tr></table></figure>
+<h4 id="查看提交的历史记录"><a href="#查看提交的历史记录" class="headerlink" title="查看提交的历史记录"></a>查看提交的历史记录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<h4 id="修改最后一次提交注释的，利用–amend参数"><a href="#修改最后一次提交注释的，利用–amend参数" class="headerlink" title="修改最后一次提交注释的，利用–amend参数"></a>修改最后一次提交注释的，利用–amend参数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+<h4 id="已使用git-add-，将修改过的文件a、b加到暂存区，现只想提交a，不想提交b"><a href="#已使用git-add-，将修改过的文件a、b加到暂存区，现只想提交a，不想提交b" class="headerlink" title="已使用git add .，将修改过的文件a、b加到暂存区，现只想提交a，不想提交b"></a>已使用git add .，将修改过的文件a、b加到暂存区，现只想提交a，不想提交b</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD b</span><br></pre></td></tr></table></figure>
+<h4 id="取消对文件的修改"><a href="#取消对文件的修改" class="headerlink" title="取消对文件的修改"></a>取消对文件的修改</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout –- readme.txt</span><br></pre></td></tr></table></figure>
+<p>——————————扩展一下——————————</p>
+<h4 id="暂存"><a href="#暂存" class="headerlink" title="暂存"></a>暂存</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
+<h4 id="列所有stash"><a href="#列所有stash" class="headerlink" title="列所有stash"></a>列所有stash</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
+<h4 id="恢复暂存的内容"><a href="#恢复暂存的内容" class="headerlink" title="恢复暂存的内容"></a>恢复暂存的内容</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply</span><br></pre></td></tr></table></figure>
+<h4 id="删除暂存区"><a href="#删除暂存区" class="headerlink" title="删除暂存区"></a>删除暂存区</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash drop</span><br></pre></td></tr></table></figure>
+<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git br -r               <span class="comment"># 查看远程分支</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git br &lt;n_br&gt;           <span class="comment"># 创建新的分支</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git br -v               <span class="comment"># 查看各个分支最后提交信息</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;br&gt;          <span class="comment"># 将br分支合并到当前分支</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git br --merged         <span class="comment"># 查看已经被合并到当前分支的分支</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git br --no-merged      <span class="comment"># 查看尚未被合并到当前分支的分支</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git co &lt;br&gt;             <span class="comment"># 切换到某个分支</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git co -b &lt;n_br&gt;        <span class="comment"># 创建新的分支，并且切换过去</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git co -b &lt;n_br&gt; &lt;brh&gt;  <span class="comment"># 基于br创建新的n_br</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git co <span class="variable">$id</span>              <span class="comment"># 把某次历史提交记录co出来，无分支信息，切换分支会自动删除</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git co <span class="variable">$id</span> -b &lt;n_br&gt;    <span class="comment"># 把某次历史提交记录co出来，创建成一个分支</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git br -d &lt;br&gt;          <span class="comment"># 删除某个分支</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git br -D &lt;br&gt;          <span class="comment"># 强制删除某个分支 (未被合并的分支被删除的时候需要强制)</span></span><br></pre></td></tr></table></figure>
+<p>——————————远程分支——————————</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull                  <span class="comment"># 拉取远程仓库所有分支更新并合并到本地</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --no-ff          <span class="comment"># 拉取远程仓库所有分支更新并合并到本地，不快进合并</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch or              <span class="comment"># 拉取远程仓库更新</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge or/master       <span class="comment"># 将远程主分支合并到本地当前分支</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git co --track or/br      <span class="comment"># 跟踪某个远程分支创建相应的本地分支</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push                  <span class="comment"># push所有分支</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push or master        <span class="comment"># 将本地主分支推到远程主分支</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u or master     <span class="comment"># 同上(如无远程主分支则创建，用于初始化远程仓库)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin &lt;lo_br&gt;   <span class="comment"># 创建远程分支， origin是远程仓库名</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin :&lt;re_br&gt;  <span class="comment"># 先删除本地分支(git br -d &lt;br&gt;)，后再push删除远程分支</span></span><br></pre></td></tr></table></figure>
+<h2 id="补丁管理"><a href="#补丁管理" class="headerlink" title="补丁管理"></a>补丁管理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &gt; ../sync.patch         <span class="comment"># 生成补丁</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git apply ../sync.patch          <span class="comment"># 打补丁</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git apply --check ../sync.patch  <span class="comment"># 测试补丁能否成功</span></span><br></pre></td></tr></table></figure>
+<h4 id="方便在多台机器上开发同步时用"><a href="#方便在多台机器上开发同步时用" class="headerlink" title="方便在多台机器上开发同步时用"></a>方便在多台机器上开发同步时用</h4>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/19/git-操作命令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-日记20180418" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -527,15 +683,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color3">日记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日记</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
             
             <div class="clearfix"></div>
