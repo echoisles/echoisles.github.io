@@ -6,20 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://echoisles.github.io">
-  <title>使用ThinkPHP5.1解决跨域浏览器OPTIONS预检问题 | </title>
+  <title>编译和解释 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="api是用thinkphp5.1写的，也不打算换了，今天这个跨域问题搞了一上午才解决 php设置header123header(&apos;Access-Control-Allow-Origin:*&apos;)header(&apos;Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE&apos;)header(&apos;Access-Control-Allow-Headers">
-<meta name="keywords" content="笔记,php,cors">
+  <meta name="description" content="编程语言的执行方式 源代码 采用某种编程语言编写的计算机程序，人类可读 目标代码 计算机可直接执行，人类不可读（专家除外）  编译  将源代码一次性转化成目标代码的过程叫做编译执行编译过程的程序叫做编译器  解释  将源代码逐条转化为目标代码同时逐条运行的过程执行解释过程的程序叫做解释器   编译与解释的区别，编译将源代码一次性的翻译成目标代码后，程序执行不需要源代码,而解释，每次运行程序都需要源">
+<meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用ThinkPHP5.1解决跨域浏览器OPTIONS预检问题">
-<meta property="og:url" content="https://echoisles.github.io/2018/05/03/使用ThinkPHP5-1解决跨域浏览器OPTIONS预检问题/index.html">
+<meta property="og:title" content="编译和解释">
+<meta property="og:url" content="https://echoisles.github.io/2018/05/05/编译和解释/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="api是用thinkphp5.1写的，也不打算换了，今天这个跨域问题搞了一上午才解决 php设置header123header(&apos;Access-Control-Allow-Origin:*&apos;)header(&apos;Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE&apos;)header(&apos;Access-Control-Allow-Headers">
+<meta property="og:description" content="编程语言的执行方式 源代码 采用某种编程语言编写的计算机程序，人类可读 目标代码 计算机可直接执行，人类不可读（专家除外）  编译  将源代码一次性转化成目标代码的过程叫做编译执行编译过程的程序叫做编译器  解释  将源代码逐条转化为目标代码同时逐条运行的过程执行解释过程的程序叫做解释器   编译与解释的区别，编译将源代码一次性的翻译成目标代码后，程序执行不需要源代码,而解释，每次运行程序都需要源">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-03T15:41:24.423Z">
+<meta property="og:image" content="https://echoisles.github.io/2018/05/05/编译和解释/chart.svg">
+<meta property="og:image" content="https://echoisles.github.io/2018/05/05/编译和解释/explan.svg">
+<meta property="og:updated_time" content="2018-05-05T08:03:00.265Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用ThinkPHP5.1解决跨域浏览器OPTIONS预检问题">
-<meta name="twitter:description" content="api是用thinkphp5.1写的，也不打算换了，今天这个跨域问题搞了一上午才解决 php设置header123header(&apos;Access-Control-Allow-Origin:*&apos;)header(&apos;Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE&apos;)header(&apos;Access-Control-Allow-Headers">
+<meta name="twitter:title" content="编译和解释">
+<meta name="twitter:description" content="编程语言的执行方式 源代码 采用某种编程语言编写的计算机程序，人类可读 目标代码 计算机可直接执行，人类不可读（专家除外）  编译  将源代码一次性转化成目标代码的过程叫做编译执行编译过程的程序叫做编译器  解释  将源代码逐条转化为目标代码同时逐条运行的过程执行解释过程的程序叫做解释器   编译与解释的区别，编译将源代码一次性的翻译成目标代码后，程序执行不需要源代码,而解释，每次运行程序都需要源">
+<meta name="twitter:image" content="https://echoisles.github.io/2018/05/05/编译和解释/chart.svg">
   
     <link rel="alternative" href="/atom.xml" title="" type="application/atom+xml">
   
@@ -145,35 +148,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-使用ThinkPHP5-1解决跨域浏览器OPTIONS预检问题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-编译和解释" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      使用ThinkPHP5.1解决跨域浏览器OPTIONS预检问题
+      编译和解释
     </h1>
   
 
         
-        <a href="/2018/05/03/使用ThinkPHP5-1解决跨域浏览器OPTIONS预检问题/" class="archive-article-date">
-  	<time datetime="2018-05-03T15:05:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-03</time>
+        <a href="/2018/05/05/编译和解释/" class="archive-article-date">
+  	<time datetime="2018-05-05T06:36:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>api是用thinkphp5.1写的，也不打算换了，今天这个跨域问题搞了一上午才解决</p>
-<h4 id="php设置header"><a href="#php设置header" class="headerlink" title="php设置header"></a>php设置header</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="string">'Access-Control-Allow-Origin:*'</span>)</span><br><span class="line">header(<span class="string">'Access-Control-Allow-Methods:GET, POST, PATCH, PUT, DELETE'</span>)</span><br><span class="line">header(<span class="string">'Access-Control-Allow-Headers:Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With'</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="nginx-配置文件"><a href="#nginx-配置文件" class="headerlink" title="nginx 配置文件"></a>nginx 配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">        # Serve a .gz version if it exists                                                                </span><br><span class="line">        gzip_static on;</span><br><span class="line">        # Try to serve the clean url version first                                                        </span><br><span class="line">        try_files $uri.html $uri.html $uri =404;</span><br><span class="line">        # allow POST on static pages                                                                      </span><br><span class="line">        error_page 405 =200 $uri; ##新增</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="以上的两个设置都好解决，下面的这个由于我使用使用了jwt规范来生成的token-浏览器的token放到了header里，设置了header，照成了浏览器预检请求"><a href="#以上的两个设置都好解决，下面的这个由于我使用使用了jwt规范来生成的token-浏览器的token放到了header里，设置了header，照成了浏览器预检请求" class="headerlink" title="以上的两个设置都好解决，下面的这个由于我使用使用了jwt规范来生成的token,浏览器的token放到了header里，设置了header，照成了浏览器预检请求"></a>以上的两个设置都好解决，下面的这个由于我使用使用了jwt规范来生成的token,浏览器的token放到了header里，设置了header，照成了浏览器预检请求</h3><p><a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">参考资料-阮一峰博客</a><br>4.1 预检请求<br>非简单请求是那种对服务器有特殊要求的请求，比如请求方法是PUT或DELETE，或者Content-Type字段的类型是application/json。<br>非简单请求的CORS请求，会在正式通信之前，增加一次HTTP查询请求，称为”预检”请求（preflight）。<br>浏览器先询问服务器，当前网页所在的域名是否在服务器的许可名单之中，以及可以使用哪些HTTP动词和头信息字段。只有得到肯定答复，浏览器才会发出正式的XMLHttpRequest请求，否则就报错。</p>
-<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p> 用户端的所有请求会被发送两次，一次预检，一次正式,但由于第一次options请求的时候会得到404状态，照成无法完成正式请求。</p>
-<h4 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h4><p>使用tp5.1 的miss路由，将method设为OPTIONS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route::miss(&apos;public/miss&apos;,&apos;OPTIONS&apos;); ## 预检请求就不会再返回404了，别忘了设置miss对应的控制器方法</span><br></pre></td></tr></table></figure></p>
+        <h4 id="编程语言的执行方式"><a href="#编程语言的执行方式" class="headerlink" title="编程语言的执行方式"></a>编程语言的执行方式</h4><ul>
+<li>源代码 采用某种编程语言编写的计算机程序，人类可读</li>
+<li>目标代码 计算机可直接执行，人类不可读（专家除外）</li>
+</ul>
+<h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><p><img src="chart.svg" alt=""></p>
 <blockquote>
-<p>当然解决跨域问题最好的办法是服务端的资源使用代理服务器转发。</p>
+<p>将源代码一次性转化成目标代码的过程叫做编译<br>执行编译过程的程序叫做编译器</p>
 </blockquote>
+<h4 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h4><p><img src="explan.svg" alt=""></p>
+<blockquote>
+<p>将源代码逐条转化为目标代码同时逐条运行的过程<br>执行解释过程的程序叫做解释器</p>
+</blockquote>
+<blockquote>
+<p>编译与解释的区别，编译将源代码一次性的翻译成目标代码后，程序执行不需要源代码,而解释，每次运行程序都需要源代码参与</p>
+</blockquote>
+<h4 id="静态语言与脚本语言"><a href="#静态语言与脚本语言" class="headerlink" title="静态语言与脚本语言"></a>静态语言与脚本语言</h4><p>根据执行方式的不同，编程语言分为两类，静态语言是使用编译执行的编程语言，脚本语言是通过解释来执行的编程语言</p>
+<p>两种语言的优势，静态语言，编译器一次生成目标语言，优化更充分，执行速度更快，脚本语言，执行程序时需要源代码，维护更灵活，可跨多个操作系统平台。</p>
 
       
 
@@ -188,14 +199,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">cors</a>
         		</li>
       		
 		</ul>
@@ -251,7 +254,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://echoisles.github.io/2018/05/03/使用ThinkPHP5-1解决跨域浏览器OPTIONS预检问题/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://echoisles.github.io/2018/05/05/编译和解释/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -265,18 +268,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/05/编译和解释/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          编译和解释
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/02/面壁/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">面壁</div>
+    <a href="/2018/05/03/使用ThinkPHP5-1解决跨域浏览器OPTIONS预检问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用ThinkPHP5.1解决跨域浏览器OPTIONS预检问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
